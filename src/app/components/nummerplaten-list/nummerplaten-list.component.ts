@@ -22,7 +22,7 @@ export class NummerplatenListComponent implements OnInit, AfterViewInit {
     var list = []
     for (var i = 0; i < 1000; i++) {
       list[i] = {
-            kenteken: 'ABC' + i+1,
+            kenteken: 'ABC' + String(i+1).padStart(4, '0'),
             landIso2Code: 'BE',
             status: 'Actief',
             vervangenDoor: '',

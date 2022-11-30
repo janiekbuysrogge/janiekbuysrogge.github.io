@@ -1,5 +1,7 @@
 <h1>With virtual scrolling</h1>
 
+Element count: {{ elementCount }}
+
 <div>
   <div class="header-row" fxLayout="row" fxLayoutAlign="space-around center">
     <div class="header-cell" fxFlex="15">Nummerplaat</div>
@@ -13,9 +15,13 @@
     <div fxFlex>Acties</div>
     <div fxFlex>Afkeurreden</div>
   </div>
+  <!-- https://material.angular.io/cdk/scrolling/overview#virtual-scrolling -->
+  <!-- height: absolute waarde is nodig -->
+  <!-- itemSize: hoeveelheid items die vooraf moet gerendered worden -->
+  <!-- appendOnly: geen recycling van elements die niet meer zichtbaar zijn -->
   <cdk-virtual-scroll-viewport style="height: 600px" itemSize="50">
     <ng-container *cdkVirtualFor="let row of items">
-        <div fxLayout="row" fxLayoutAlign="space-around center" class="mb-2" style="height: 50px;">
+        <div fxLayout="row" fxLayoutAlign="space-around center" class="mb-2 record-pk" style="height: 50px;">
         <div fxFlex="15">{{ row.kenteken }}</div>
         <div fxFlex>{{ row.landIso2Code }}</div>
         <div fxFlex>{{ row.status }}</div>
