@@ -1,0 +1,34 @@
+<h1>With virtual scrolling</h1>
+
+<div>
+  <div class="header-row" fxLayout="row" fxLayoutAlign="space-around center">
+    <div class="header-cell" fxFlex="15">Nummerplaat</div>
+    <div fxFlex>Land</div>
+    <div fxFlex>Status</div>
+    <div fxFlex>Vervangen door</div>
+    <div fxFlex>Soort</div>
+    <div fxFlex>Alias</div>
+    <div fxFlex>Startdatum</div>
+    <div fxFlex>Einddatum</div>
+    <div fxFlex>Acties</div>
+    <div fxFlex>Afkeurreden</div>
+  </div>
+  <cdk-virtual-scroll-viewport style="height: 600px" itemSize="50">
+    <ng-container *cdkVirtualFor="let row of items">
+        <div fxLayout="row" fxLayoutAlign="space-around center" class="mb-2" style="height: 50px;">
+        <div fxFlex="15">{{ row.kenteken }}</div>
+        <div fxFlex>{{ row.landIso2Code }}</div>
+        <div fxFlex>{{ row.status }}</div>
+        <div fxFlex>{{ row.vervangenDoor }}</div>
+        <div fxFlex>{{ row.soort }}</div>
+        <div fxFlex>{{ row.alias }}</div>
+        <div fxFlex>{{ row.startDatum | date }}</div>
+        <div fxFlex>{{ row.eindDatum | date }}</div>
+        <div fxFlex>
+            <button mat-raised-button color="primary">Update</button>
+        </div>
+        <div fxFlex>{{ row.afkeurReden }}</div>
+        </div>
+    </ng-container>
+  </cdk-virtual-scroll-viewport>
+</div>

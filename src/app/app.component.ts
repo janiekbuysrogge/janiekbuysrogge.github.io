@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Nummerplaat } from './nummerplaat';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-virtual-scrolling-app';
 }
